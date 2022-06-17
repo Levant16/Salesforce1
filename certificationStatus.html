@@ -1,0 +1,29 @@
+<template>
+    <div class="slds-modal__header">
+        <h1 class="slds-modal__title slds-hyphenate">Certification Status</h1>
+      </div>
+      
+        <lightning-record-edit-form
+            object-api-name="Case"
+            record-id={recordId}
+            onsuccess={closeAction}>
+            <lightning-input-field field-name="Certification_Category__c" disabled> </lightning-input-field>
+            <lightning-input-field field-name="Certification_Name__c" disabled> </lightning-input-field>
+            <lightning-input-field 
+                field-name="Examination_Status__c"
+                onchange={handleStatusChange}>
+            </lightning-input-field>
+            <lightning-input-field 
+                field-name="Certification_Id__c" 
+                read-only={isReadOnly}
+                required="true">
+            </lightning-input-field>
+            <div class="slds-modal__footer">
+                <lightning-button variant="neutral" label="Cancel" type="cancel" onclick={closeAction}></lightning-button>
+                 &nbsp;&nbsp; 
+                <lightning-button  type="submit" variant="brand" label="Save"></lightning-button>
+                 &nbsp;&nbsp; 
+            </div>
+        </lightning-record-edit-form>
+        
+</template>
