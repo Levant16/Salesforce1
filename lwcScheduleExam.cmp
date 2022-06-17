@@ -1,0 +1,4 @@
+<aura:component implements="force:lightningQuickActionWithoutHeader,forceCommunity:availableForAllPageTypes,force:hasRecordId">
+    <aura:attribute name="recordId" type="String"/>
+    <c:scheduleExam recordId="{!v.recordId}" oncloseModal="{!c.handlecloseModal}"/>
+</aura:component>	
